@@ -5,26 +5,26 @@ const VideoGalleryPage = () => {
   const videoItems = [
     {
       id: 1,
-      imageUrl: "src/assets/image/1.jpg",
-      videoUrl: "src/assets/video/1.mp4",
+      imageUrl: "assets/image/1.jpg",
+      videoUrl: "assets/video/1.mp4",
       title: "Engagement Look"
     },
     {
       id: 2,
-      imageUrl: "src/assets/image/3.jpg",
-      videoUrl: "src/assets/video/3.mp4",
+      imageUrl: "assets/image/3.jpg",
+      videoUrl: "assets/video/3.mp4",
       title: "Sangeet Look"
     },
     {
       id: 3,
-      imageUrl: "src/assets/image/13.jpg",
-      videoUrl: "src/assets/video/2.mp4",
+      imageUrl: "assets/image/13.jpg",
+      videoUrl: "assets/video/2.mp4",
       title: "Glamour Shots Behind The Scenes"
     },
     {
       id: 4,
-      imageUrl: "src/assets/image/12.jpg",
-      videoUrl: "src/assets/video/4.mp4",
+      imageUrl: "assets/image/12.jpg",
+      videoUrl: "assets/video/4.mp4",
       title: "Sangeet Look"
     }
   ];

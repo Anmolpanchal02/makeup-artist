@@ -6,20 +6,20 @@ const MixedGalleryPage = () => {
     {
       id: 1,
       type: 'image',
-      src: "src/assets/image/1.jpg",
+      src: "assets/image/1.jpg",
       
     },
     {
       id: 2,
       type: 'image',
-      src: "src/assets/image/13.jpg",
+      src: "assets/image/13.jpg",
       
     },
     
     {
       id: 3,
       type: 'image',
-      src: "src/assets/image/2.jpg",
+      src: "assets/image/2.jpg",
       
     },
     
@@ -27,94 +27,94 @@ const MixedGalleryPage = () => {
     {
       id: 4,
       type: 'image',
-      src: "src/assets/image/3.jpg",
+      src: "assets/image/3.jpg",
       // alt: "मेकअप लुक 3"
     },
     {
       id: 5,
       type: 'image',
-      src: "src/assets/image/16.jpg",
+      src: "assets/image/16.jpg",
       // alt: "मेकअप लुक 3"
     },
     
     {
       id: 6,
       type: 'image',
-      src: "src/assets/image/4.jpg",
+      src: "assets/image/4.jpg",
       // alt: "मेकअप लुक 4"
     },
     {
       id: 7,
       type: 'image',
-      src: "src/assets/image/14.jpg",
+      src: "assets/image/14.jpg",
       // alt: "मेकअप लुक 5"
     },
     {
       id: 8,
       type: 'image',
-      src: "src/assets/image/22 .jpg",
+      src: "assets/image/22 .jpg",
       // alt: "मेकअप लुक 5"
     },
    
      {
       id: 9,
       type: 'image',
-      src: "src/assets/image/19.jpg",
+      src: "assets/image/19.jpg",
       // alt: "मेकअप लुक 2"
     },
     {
       id: 10,
       type: 'image',
-      src: "src/assets/image/18.jpg",
+      src: "assets/image/18.jpg",
       // alt: "मेकअप लुक 2"
     },
     {
       id: 11,
       type: 'image',
-      src: "src/assets/image/8.jpg",
+      src: "assets/image/8.jpg",
       // alt: "मेकअप लुक 2"
     },
    
     {
       id: 12,
       type: 'image',
-      src: "src/assets/image/9.jpg",
+      src: "assets/image/9.jpg",
       // alt: "मेकअप लुक 2"
     },
     {
       id: 13,
       type: 'image',
-      src: "src/assets/image/10.jpg",
+      src: "assets/image/10.jpg",
       // alt: "मेकअप लुक 2"
     },
     {
       id: 14,
       type: 'image',
-      src: "src/assets/image/11.jpg",
+      src: "assets/image/11.jpg",
       // alt: "मेकअप लुक 2"
     },
     {
       id: 15,
       type: 'image',
-      src: "src/assets/image/20.jpg",
+      src: "assets/image/20.jpg",
       // alt: "मेकअप लुक 2"
     },
     {
       id: 16,
       type: 'image',
-      src: "src/assets/image/23.jpg",
+      src: "assets/image/23.jpg",
       // alt: "मेकअप लुक 2"
     },
     {
       id: 17,
       type: 'image',
-      src: "src/assets/image/21.jpg",
+      src: "assets/image/21.jpg",
       
     },
      {
       id: 18,
       type: 'image',
-      src: "src/assets/image/12.jpg",
+      src: "assets/image/12.jpg",
       // alt: "मेकअप लुक 2"
     },
   ];
