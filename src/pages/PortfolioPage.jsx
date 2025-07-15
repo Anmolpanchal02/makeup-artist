@@ -2,24 +2,23 @@ import React, { useState, useEffect, useRef } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react'; // Horizontal arrows for navigation
 
 const PortfolioPage = () => {
-  // IMPORTANT: Make sure your image files are located in the 'public/assets/image/' directory
+  // IMPORTANT: Make sure your image files are located in the '/image/' directory
   // and their filenames exactly match what's listed here.
   const originalImages = [
-    "../assets/image/image_1.jpg",
-    
-    "assets/image/2.jpg",
-    "public/assets/image/3.jpg",
-    "public/assets/image/4.jpg",
-    "public/assets/image/13.jpg",
-    "public/assets/image/5.jpg",
-    "public/assets/image/1.jpg",
-    "public/assets/image/6.jpg",
-    "public/assets/image/7.jpg",
-    "public/assets/image/8.jpg",
-    "public/assets/image/19.jpg",
-    "public/assets/image/9.jpg",
-    "public/assets/image/10.jpg",
-    "public/assets/image/11.jpg",
+    "image/1.jpg",
+    "image/2.jpg",
+    "image/3.jpg",
+    "image/4.jpg",
+    "image/13.jpg",
+    "image/5.jpg",
+    "/image/1.jpg",
+    "/image/6.jpg",
+    "/image/7.jpg",
+    "/image/8.jpg",
+    "/image/19.jpg",
+    "/image/9.jpg",
+    "/image/10.jpg",
+    "/image/11.jpg",
   ];
 
   // Number of images to clone at the beginning and end for seamless looping
@@ -100,7 +99,7 @@ const PortfolioPage = () => {
     e.target.public = "https://placehold.co/400x600/CCCCCC/333333?text=Image+Not+Found";
     e.target.alt = "Image failed to load";
     console.error("Image failed to load from path:", e.target.public);
-    console.error("Please ensure the image is in public/assets/image/ and the filename is correct.");
+    console.error("Please ensure the image is in /image/ and the filename is correct.");
   };
 
   return (
