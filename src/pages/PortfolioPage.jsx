@@ -42,7 +42,7 @@ const PortfolioPage = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlideIndex((prevIndex) => prevIndex + 1);
-    }, 3000); // हर 4 सेकंड में इमेज बदलें (Change image every 4 seconds)
+    }, 4000); // हर 4 सेकंड में इमेज बदलें (Change image every 4 seconds)
 
     // Cleanup interval on component unmount
     return () => clearInterval(interval);
