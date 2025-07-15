@@ -18,14 +18,14 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="text-center lg:text-left">
             <h3 className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent mb-4">
-              Sarah's Glam
+              Sunita Sharma
             </h3>
             <p className="text-gray-300 text-sm sm:text-base mb-6 leading-relaxed">
               Transform your beauty with our professional makeup artistry. Making every moment memorable with flawless looks.
             </p>
             <div className="flex justify-center lg:justify-start space-x-4">
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/makeupbysunita008?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group bg-gradient-to-r from-pink-500 to-purple-600 p-3 rounded-full hover:from-pink-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
