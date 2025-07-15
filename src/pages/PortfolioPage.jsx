@@ -5,20 +5,21 @@ const PortfolioPage = () => {
   // IMPORTANT: Make sure your image files are located in the 'public/assets/image/' directory
   // and their filenames exactly match what's listed here.
   const originalImages = [
-    "../assets/image/1.jpg",
-    "../assets/image/2.jpg",
-    "../assets/image/3.jpg",
-    "../assets/image/4.jpg",
-    "../assets/image/13.jpg",
-    "../assets/image/5.jpg",
-    "../assets/image/1.jpg",
-    "../assets/image/6.jpg",
-    "../assets/image/7.jpg",
-    "../assets/image/8.jpg",
-    "../assets/image/19.jpg",
-    "../assets/image/9.jpg",
-    "../assets/image/10.jpg",
-    "../assets/image/11.jpg",
+    "../assets/image/12.jpg",
+    
+    "assets/image/2.jpg",
+    "public/assets/image/3.jpg",
+    "public/assets/image/4.jpg",
+    "public/assets/image/13.jpg",
+    "public/assets/image/5.jpg",
+    "public/assets/image/1.jpg",
+    "public/assets/image/6.jpg",
+    "public/assets/image/7.jpg",
+    "public/assets/image/8.jpg",
+    "public/assets/image/19.jpg",
+    "public/assets/image/9.jpg",
+    "public/assets/image/10.jpg",
+    "public/assets/image/11.jpg",
   ];
 
   // Number of images to clone at the beginning and end for seamless looping
@@ -96,9 +97,9 @@ const PortfolioPage = () => {
   // Function to handle image loading errors
   const handleImageError = (e) => {
     // Replace the broken image with a placeholder and log to console for debugging
-    e.target.src = "https://placehold.co/400x600/CCCCCC/333333?text=Image+Not+Found";
+    e.target.public = "https://placehold.co/400x600/CCCCCC/333333?text=Image+Not+Found";
     e.target.alt = "Image failed to load";
-    console.error("Image failed to load from path:", e.target.src);
+    console.error("Image failed to load from path:", e.target.public);
     console.error("Please ensure the image is in public/assets/image/ and the filename is correct.");
   };
 
@@ -144,7 +145,7 @@ const PortfolioPage = () => {
               return (
                 <img
                   key={index}
-                  src={image}
+                  public={image}
                   alt={`Portfolio Image ${index + 1}`}
                   // Fixed width and height for vertical images
                   // `mx-4` for horizontal margin (total 32px gap between images)
