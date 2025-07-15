@@ -52,7 +52,7 @@ const MixedGalleryPage = () => {
     {
       id: 8,
       type: 'image',
-      src: "assets/image/22 .jpg",
+      src: "assets/image/22.jpg",
       // alt: "मेकअप लुक 5"
     },
    
