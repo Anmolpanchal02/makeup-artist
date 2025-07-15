@@ -1,1 +1,6 @@
 @import "tailwindcss";
+
+
+.logo {
+  background-image: url('/assets/react.svg'); /* <-- is line ko hatao ya comment karo */
+}
