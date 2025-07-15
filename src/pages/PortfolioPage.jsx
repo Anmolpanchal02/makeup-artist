@@ -5,20 +5,22 @@ const PortfolioPage = () => {
   // IMPORTANT: Make sure your image files are located in the 'public/assets/image/' directory
   // and their filenames exactly match what's listed here.
   const originalImages = [
-    "assets/image/1.jpg",
-    "assets/image/2.jpg",
-    "assets/image/3.jpg",
-    "assets/image/4.jpg",
-    "assets/image/13.jpg",
-    "assets/image/5.jpg",
-    "assets/image/1.jpg",
-    "assets/image/6.jpg",
-    "assets/image/7.jpg",
-    "assets/image/8.jpg",
-    "assets/image/19.jpg",
-    "assets/image/9.jpg",
-    "assets/image/10.jpg",
-    "assets/image/11.jpg",
+    "https://res.cloudinary.com/duupzdrl1/image/upload/v1752600350/7_zysdjj.jpg",
+    "https://res.cloudinary.com/duupzdrl1/image/upload/v1752600352/12_s2mlv1.jpg",
+    "https://res.cloudinary.com/duupzdrl1/image/upload/v1752600358/9_lnbehe.jpg",
+    "https://res.cloudinary.com/duupzdrl1/image/upload/v1752600359/16_lturko.jpg",
+    "https://res.cloudinary.com/duupzdrl1/image/upload/v1752600361/21_qe5uj4.jpg",
+    "https://res.cloudinary.com/duupzdrl1/image/upload/v1752600363/17_yr4oob.jpg",
+    "https://res.cloudinary.com/duupzdrl1/image/upload/v1752601204/WhatsApp_Image_2025-07-15_at_22.59.01_46975b44_a7xmg1.jpg",
+    "https://res.cloudinary.com/duupzdrl1/image/upload/v1752600360/20_kofdqn.jpg",
+    "https://res.cloudinary.com/duupzdrl1/image/upload/v1752600354/18_ljm7b9.jpg",
+    "https://res.cloudinary.com/duupzdrl1/image/upload/v1752600353/10_mtsuxx.jpg",
+    "https://res.cloudinary.com/duupzdrl1/image/upload/v1752600350/4_dlx94a.jpg",
+    "https://res.cloudinary.com/duupzdrl1/image/upload/v1752600349/13_fh0mlz.jpg",
+    "https://res.cloudinary.com/duupzdrl1/image/upload/v1752600313/3_gd3gze.jpg",
+    "https://res.cloudinary.com/duupzdrl1/image/upload/v1752600324/1_xm3syx.jpg",
+    "https://res.cloudinary.com/duupzdrl1/image/upload/v1752600359/19_irievv.jpg",
+    "https://res.cloudinary.com/duupzdrl1/image/upload/v1752600358/14_gv3yil.jpg",
   ];
 
   // Number of images to clone at the beginning and end for seamless looping

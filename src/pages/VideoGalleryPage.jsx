@@ -5,29 +5,29 @@ const VideoGalleryPage = () => {
   const videoItems = [
     {
       id: 1,
-      imageUrl: "assets/image/1.jpg",
-      videoUrl: "assets/video/1.mp4",
+      imageUrl: "https://res.cloudinary.com/duupzdrl1/image/upload/v1752600324/1_xm3syx.jpg",
+      videoUrl: "https://res.cloudinary.com/duupzdrl1/video/upload/v1752601849/1_uhe4iw.mp4",
       title: "Engagement Look"
     },
     
     {
       id: 3,
-      imageUrl: "assets/image/13.jpg",
-      videoUrl: "assets/video/2.mp4",
-      title: "Glamour Shots Behind The Scenes"
+      imageUrl: "https://res.cloudinary.com/duupzdrl1/image/upload/v1752600349/13_fh0mlz.jpg",
+      videoUrl: "https://res.cloudinary.com/duupzdrl1/video/upload/v1752601702/2_becdzp.mp4",
+      title: "Groom Makeup Look"
     },
     {
       id: 2,
-      imageUrl: "assets/image/3.jpg",
-      videoUrl: "assets/video/3.mp4",
+      imageUrl: "https://res.cloudinary.com/duupzdrl1/image/upload/v1752600313/3_gd3gze.jpg",
+      videoUrl: "https://res.cloudinary.com/duupzdrl1/video/upload/v1752601582/3_ylglg0.mp4",
       title: "Sangeet Look"
     },
     {
       id: 4,
-      imageUrl: "assets/image/19.jpg",
-      videoUrl: "assets/video/4.mp4",
-      title: "Sangeet Look"
-    },
+      imageUrl: "https://res.cloudinary.com/duupzdrl1/image/upload/v1752600359/19_irievv.jpg",
+      videoUrl: "https://res.cloudinary.com/duupzdrl1/video/upload/v1752601695/4_nklpqj.mp4",
+      title: "Groom Look"
+    }, 
     
   ];
 

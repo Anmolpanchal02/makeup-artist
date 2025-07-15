@@ -88,6 +88,12 @@ const MixedGalleryPage = () => {
       // alt: "मेकअप लुक 2"
     },
     {
+      id: 20,
+      type: 'image',
+      src: "https://res.cloudinary.com/duupzdrl1/image/upload/v1752601204/WhatsApp_Image_2025-07-15_at_22.59.01_46975b44_a7xmg1.jpg",
+      // alt: "मेकअप लुक 2"
+    },
+    {
       id: 14,
       type: 'image',
       src: "https://res.cloudinary.com/duupzdrl1/image/upload/v1752600335/11_muo9qc.jpg",
@@ -124,6 +130,7 @@ const MixedGalleryPage = () => {
       src: "https://res.cloudinary.com/duupzdrl1/image/upload/v1752600363/17_yr4oob.jpg",
       // alt: "मेकअप लुक 2"
     },
+     
   ];
 
   const videoRefs = useRef({});
