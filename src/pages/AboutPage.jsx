@@ -20,7 +20,7 @@ const AboutPage = () => {
           <div className="relative group">
             <div className="absolute -inset-4 bg-gradient-to-r from-pink-500 via-rose-500 to-purple-500 rounded-full blur opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
             <img
-              src="assets/image/Sunita.jpg"
+              src="https://res.cloudinary.com/duupzdrl1/image/upload/v1752600314/Sunita_i7y09j.jpg"
               alt="Sarah, the makeup artist"
               className="relative rounded-full w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 object-cover shadow-2xl transform group-hover:scale-105 transition-all duration-700 ring-4 ring-white"
             />

@@ -6,20 +6,20 @@ const MixedGalleryPage = () => {
     {
       id: 1,
       type: 'image',
-      src: "assets/image/1.jpg",
+      src: "https://res.cloudinary.com/duupzdrl1/image/upload/v1752600324/1_xm3syx.jpg",
       
     },
     {
       id: 2,
       type: 'image',
-      src: "assets/image/13.jpg",
+      src: "https://res.cloudinary.com/duupzdrl1/image/upload/v1752600349/13_fh0mlz.jpg",
       
     },
     
     {
       id: 3,
       type: 'image',
-      src: "assets/image/2.jpg",
+      src: "https://res.cloudinary.com/duupzdrl1/image/upload/v1752600330/2_fi6hsn.jpg",
       
     },
     
@@ -27,94 +27,101 @@ const MixedGalleryPage = () => {
     {
       id: 4,
       type: 'image',
-      src: "assets/image/3.jpg",
+      src: "https://res.cloudinary.com/duupzdrl1/image/upload/v1752600313/3_gd3gze.jpg",
       // alt: "मेकअप लुक 3"
     },
     {
       id: 5,
       type: 'image',
-      src: "assets/image/16.jpg",
+      src: "https://res.cloudinary.com/duupzdrl1/image/upload/v1752600359/16_lturko.jpg",
       // alt: "मेकअप लुक 3"
     },
     
     {
       id: 6,
       type: 'image',
-      src: "assets/image/4.jpg",
+      src: "https://res.cloudinary.com/duupzdrl1/image/upload/v1752600350/4_dlx94a.jpg",
       // alt: "मेकअप लुक 4"
     },
     {
       id: 7,
       type: 'image',
-      src: "assets/image/14.jpg",
+      src: "https://res.cloudinary.com/duupzdrl1/image/upload/v1752600358/14_gv3yil.jpg",
       // alt: "मेकअप लुक 5"
     },
     {
       id: 8,
       type: 'image',
-      src: "assets/image/22.jpg",
+      src: "https://res.cloudinary.com/duupzdrl1/image/upload/v1752600314/22_b4ibqr.jpg",
       // alt: "मेकअप लुक 5"
     },
    
      {
       id: 9,
       type: 'image',
-      src: "assets/image/19.jpg",
+      src: "https://res.cloudinary.com/duupzdrl1/image/upload/v1752600359/19_irievv.jpg",
       // alt: "मेकअप लुक 2"
     },
     {
       id: 10,
       type: 'image',
-      src: "assets/image/18.jpg",
+      src: "https://res.cloudinary.com/duupzdrl1/image/upload/v1752600354/18_ljm7b9.jpg",
       // alt: "मेकअप लुक 2"
     },
     {
       id: 11,
       type: 'image',
-      src: "assets/image/8.jpg",
+      src: "https://res.cloudinary.com/duupzdrl1/image/upload/v1752600330/8_i8vwcv.jpg",
       // alt: "मेकअप लुक 2"
     },
    
     {
       id: 12,
       type: 'image',
-      src: "assets/image/9.jpg",
+      src: "https://res.cloudinary.com/duupzdrl1/image/upload/v1752600358/9_lnbehe.jpg",
       // alt: "मेकअप लुक 2"
     },
     {
       id: 13,
       type: 'image',
-      src: "assets/image/10.jpg",
+      src: "https://res.cloudinary.com/duupzdrl1/image/upload/v1752600353/10_mtsuxx.jpg",
       // alt: "मेकअप लुक 2"
     },
     {
       id: 14,
       type: 'image',
-      src: "assets/image/11.jpg",
+      src: "https://res.cloudinary.com/duupzdrl1/image/upload/v1752600335/11_muo9qc.jpg",
       // alt: "मेकअप लुक 2"
     },
     {
       id: 15,
       type: 'image',
-      src: "assets/image/20.jpg",
+      src: "https://res.cloudinary.com/duupzdrl1/image/upload/v1752600360/20_kofdqn.jpg",
       // alt: "मेकअप लुक 2"
     },
     {
       id: 16,
       type: 'image',
-      src: "assets/image/23.jpg",
+      src: "https://res.cloudinary.com/duupzdrl1/image/upload/v1752600323/23_usqwwd.jpg",
       // alt: "मेकअप लुक 2"
     },
     {
       id: 17,
       type: 'image',
-      src: "assets/image/21.jpg",
+      src: "https://res.cloudinary.com/duupzdrl1/image/upload/v1752600361/21_qe5uj4.jpg",
       
     },
      {
       id: 18,
       type: 'image',
-      src: "assets/image/12.jpg",
+      src: "https://res.cloudinary.com/duupzdrl1/image/upload/v1752600352/12_s2mlv1.jpg",
+      // alt: "मेकअप लुक 2"
+    },
+    
+     {
+      id: 19,
+      type: 'image',
+      src: "https://res.cloudinary.com/duupzdrl1/image/upload/v1752600363/17_yr4oob.jpg",
       // alt: "मेकअप लुक 2"
     },
   ];
