@@ -5,7 +5,7 @@ const PortfolioPage = () => {
   // IMPORTANT: Make sure your image files are located in the 'public/assets/image/' directory
   // and their filenames exactly match what's listed here.
   const originalImages = [
-    "../assets/image/12.jpg",
+    "../assets/image/image_1.jpg",
     
     "assets/image/2.jpg",
     "public/assets/image/3.jpg",
