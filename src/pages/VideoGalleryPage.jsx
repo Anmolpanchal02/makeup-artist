@@ -9,12 +9,7 @@ const VideoGalleryPage = () => {
       videoUrl: "assets/video/1.mp4",
       title: "Engagement Look"
     },
-    {
-      id: 2,
-      imageUrl: "assets/image/3.jpg",
-      videoUrl: "assets/video/3.mp4",
-      title: "Sangeet Look"
-    },
+    
     {
       id: 3,
       imageUrl: "assets/image/13.jpg",
@@ -22,11 +17,18 @@ const VideoGalleryPage = () => {
       title: "Glamour Shots Behind The Scenes"
     },
     {
+      id: 2,
+      imageUrl: "assets/image/3.jpg",
+      videoUrl: "assets/video/3.mp4",
+      title: "Sangeet Look"
+    },
+    {
       id: 4,
-      imageUrl: "assets/image/12.jpg",
+      imageUrl: "assets/image/19.jpg",
       videoUrl: "assets/video/4.mp4",
       title: "Sangeet Look"
-    }
+    },
+    
   ];
 
   // State to track which video is playing on mobile
