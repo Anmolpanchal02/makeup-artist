@@ -112,7 +112,7 @@ const PortfolioPage = ({ id }) => {
   };
 
   return (
-    <section id={id} className="container w-full mx-auto  py-12">
+    <section id={id} className="container w-full mx-auto">
       <h2 className="text-4xl font-bold text-center text-pink-600 mb-6">Our Portfolio</h2>
       <div className="bg-white rounded-3xl shadow-xl px-4 md:p-12">
         <div ref={carouselRef} className="relative  w-full max-w-6xl mx-auto overflow-hidden rounded-2xl shadow-lg h-[400px] md:h-[500px] flex items-center">
