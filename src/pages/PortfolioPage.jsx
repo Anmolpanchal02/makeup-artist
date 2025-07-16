@@ -1,9 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react'; // Horizontal arrows for navigation
 
-const PortfolioPage = () => {
-  // IMPORTANT: Make sure your image files are located in the 'public/assets/image/' directory
-  // and their filenames exactly match what's listed here.
+const PortfolioPage = ({ id }) => {
+  // IMPORTANT: Make sure your image files are accessible via these URLs.
   const originalImages = [
     "https://res.cloudinary.com/duupzdrl1/image/upload/v1752600350/7_zysdjj.jpg",
     "https://res.cloudinary.com/duupzdrl1/image/upload/v1752600352/12_s2mlv1.jpg",
@@ -23,107 +22,109 @@ const PortfolioPage = () => {
     "https://res.cloudinary.com/duupzdrl1/image/upload/v1752600358/14_gv3yil.jpg",
   ];
 
-  // Number of images to clone at the beginning and end for seamless looping
   const numClones = 2;
-
-  // Create the extended image array for seamless looping
-  // [last N clones] + [original images] + [first N clones]
   const images = [
     ...originalImages.slice(originalImages.length - numClones),
     ...originalImages,
     ...originalImages.slice(0, numClones),
   ];
 
-  // currentSlideIndex tracks the index within the 'images' (cloned) array
-  const [currentSlideIndex, setCurrentSlideIndex] = useState(numClones); // Start at the first 'real' image
-  // isTransitioning helps to instantly jump back/forth when looping
+  const [currentSlideIndex, setCurrentSlideIndex] = useState(numClones);
   const [isTransitioning, setIsTransitioning] = useState(true);
-  const carouselRef = useRef(null); // Ref for the outer slider container
+  const carouselRef = useRef(null);
+
+  // State to force re-render on resize for accurate transform calculation
+  const [containerWidth, setContainerWidth] = useState(0);
 
   // Auto-play functionality
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlideIndex((prevIndex) => prevIndex + 1);
-    }, 4000); // हर 4 सेकंड में इमेज बदलें (Change image every 4 seconds)
+    }, 4000);
 
-    // Cleanup interval on component unmount
     return () => clearInterval(interval);
-  }, []); // Empty dependency array means this runs once on mount
+  }, []);
 
   // Handle seamless looping logic after slide change
   useEffect(() => {
-    if (currentSlideIndex === images.length - numClones) { // If we've slid to the first cloned original image
-      // Instantly jump back to the actual first original image (at index numClones)
-      setIsTransitioning(false); // Disable transition
+    if (currentSlideIndex === images.length - numClones) {
+      setIsTransitioning(false);
       setTimeout(() => {
         setCurrentSlideIndex(numClones);
-        setIsTransitioning(true); // Re-enable transition after jump
-      }, 50); // Small delay to allow browser to register transition disable
-    } else if (currentSlideIndex === numClones - 1) { // If we've slid to the last cloned original image
-      // Instantly jump forward to the actual last original image
-      setIsTransitioning(false); // Disable transition
+        setIsTransitioning(true);
+      }, 50);
+    } else if (currentSlideIndex === numClones - 1) {
+      setIsTransitioning(false);
       setTimeout(() => {
         setCurrentSlideIndex(images.length - numClones - 1);
-        setIsTransitioning(true); // Re-enable transition after jump
-      }, 50); // Small delay
+        setIsTransitioning(true);
+      }, 50);
     }
   }, [currentSlideIndex, images.length, numClones]);
 
+  // Update container width on mount and resize
+  useEffect(() => {
+    const updateContainerWidth = () => {
+      if (carouselRef.current) {
+        setContainerWidth(carouselRef.current.offsetWidth);
+      }
+    };
+
+    updateContainerWidth(); // Initial set
+    window.addEventListener('resize', updateContainerWidth);
+    return () => window.removeEventListener('resize', updateContainerWidth);
+  }, []); // Empty dependency array means this runs once on mount
+
   const nextImage = () => {
-    if (!isTransitioning) return; // Prevent rapid clicks during transition reset
+    if (!isTransitioning) return;
     setCurrentSlideIndex((prevIndex) => prevIndex + 1);
   };
 
   const prevImage = () => {
-    if (!isTransitioning) return; // Prevent rapid clicks during transition reset
+    if (!isTransitioning) return;
     setCurrentSlideIndex((prevIndex) => prevIndex - 1);
   };
 
   // Calculate the translateX value to center the current image in a multi-image view
   const getTransformX = () => {
-    if (!carouselRef.current) return '0px';
+    if (!carouselRef.current || containerWidth === 0) return '0px';
 
-    const imageWidth = 300; // Fixed width for each image (from w-[300px])
-    const marginX = 16; // Half of mx-4 (32px total), so 16px on each side of the image
-    const itemFullWidth = imageWidth + (marginX * 2); // Total space an item takes (300 + 32 = 332px)
+    // Get the actual rendered width of the first image element
+    // Assuming all images within the flex container will have the same responsive width
+    const firstImageElement = carouselRef.current.querySelector('img');
+    if (!firstImageElement) return '0px';
 
-    const containerWidth = carouselRef.current.offsetWidth; // Get actual width of the visible container
+    const imageWidth = firstImageElement.offsetWidth; // Get actual rendered width of one image
+    const marginX = 16; // Half of mx-4 (32px total horizontal margin)
+    const itemFullWidth = imageWidth + (marginX * 2); // Total space an item takes
 
     // Calculate the offset needed to center the currentSlideIndex image
-    // This moves the entire flex track
     const offset = (containerWidth / 2) - (currentSlideIndex * itemFullWidth + (itemFullWidth / 2));
     return `${offset}px`;
   };
 
   // Function to handle image loading errors
   const handleImageError = (e) => {
-    // Replace the broken image with a placeholder and log to console for debugging
     e.target.src = "https://placehold.co/400x600/CCCCCC/333333?text=Image+Not+Found";
     e.target.alt = "Image failed to load";
     console.error("Image failed to load from path:", e.target.src);
-    console.error("Please ensure the image is in public/assets/image/ and the filename is correct.");
+    console.error("Please ensure the image URL is correct and accessible (e.g., Cloudinary link).");
   };
 
   return (
-    <section id="portfolio" className="container mx-auto px-6 ">
-      {/* <h2 className="text-4xl font-bold text-center text-pink-600 mb-12">Our Portfolio</h2> */}
-      <div className="bg-white rounded-3xl shadow-xl p-8 md:p-12">
-        {/* Outer slider container: Increased max-w to show multiple images */}
-        {/* Fixed height (h-[550px]) to ensure consistent vertical space for images */}
-        <div ref={carouselRef} className="relative w-full max-w-6xl mx-auto overflow-hidden rounded-2xl shadow-lg h-[550px] flex items-center">
-          {/* Inner container for images: uses flex and translateX for sliding */}
-          {/* `py-4` for vertical padding, `flex-nowrap` to prevent wrapping */}
+    <section id={id} className="container mx-auto px-6">
+      <h2 className="text-4xl font-bold text-center text-pink-600 mb-6">Our Portfolio</h2>
+      <div className="bg-white rounded-3xl shadow-xl px-4 md:p-12">
+        <div ref={carouselRef} className="relative w-full max-w-6xl mx-auto overflow-hidden rounded-2xl shadow-lg h-[400px] md:h-[500px] flex items-center">
           <div
             className={`flex flex-nowrap py-4 ${isTransitioning ? 'transition-transform duration-500 ease-in-out' : ''}`}
             style={{
               transform: `translateX(${getTransformX()})`,
-              // Set the total width of the inner track to accommodate all images
-              width: `${images.length * (300 + 32)}px` // (imageWidth + total margin-x) * number of images
+              // Set a very large width to ensure all images fit in a single row
+              width: `${images.length * (300 + 32) * 2}px` // Multiplied by 2 to be safe, actual width calculated by flex items
             }}
           >
             {images.map((image, index) => {
-              // Determine if the image is current, adjacent, or further away for blur/scale effects
-              // Calculate effective distance for circular array to handle cloning correctly
               const effectiveDistance = Math.min(
                 Math.abs(index - currentSlideIndex),
                 images.length - Math.abs(index - currentSlideIndex)
@@ -134,13 +135,13 @@ const PortfolioPage = () => {
 
               if (index === currentSlideIndex) {
                 blurClass = 'filter-none';
-                scaleClass = 'scale-105'; // Main image slightly larger
-              } else if (effectiveDistance === 1) { // Directly adjacent
-                blurClass = 'filter blur-sm'; // Adjacent images slightly blurred
-                scaleClass = 'scale-95'; // Adjacent images slightly smaller
+                scaleClass = 'scale-105';
+              } else if (effectiveDistance === 1) {
+                blurClass = 'filter blur-sm';
+                scaleClass = 'scale-95';
               } else {
-                blurClass = 'filter blur-md'; // Images further away are more blurred
-                scaleClass = 'scale-85'; // Images further away are smaller
+                blurClass = 'filter blur-md';
+                scaleClass = 'scale-85';
               }
 
               return (
@@ -148,12 +149,13 @@ const PortfolioPage = () => {
                   key={index}
                   src={image}
                   alt={`Portfolio Image ${index + 1}`}
-                  // Fixed width and height for vertical images
-                  // `mx-4` for horizontal margin (total 32px gap between images)
-                  // `flex-shrink-0` ensures images don't shrink
-                  className={`flex-shrink-0 w-[300px] h-[500px] object-cover rounded-2xl mx-4
-                              ${blurClass} ${scaleClass}`} // Transition handled by parent div
-                  onError={handleImageError} // Add error handler here
+                  // Responsive width and height for images
+                  // Mobile: w-[200px] h-[300px]
+                  // Small screens: sm:w-[250px] sm:h-[350px]
+                  // Medium/Large screens: md:w-[300px] md:h-[400px]
+                  className={`flex-shrink-0 w-[200px] h-[300px] sm:w-[250px] sm:h-[350px] md:w-[300px] md:h-[400px] object-cover rounded-2xl mx-4
+                                ${blurClass} ${scaleClass} transition-all duration-300 ease-in-out`} // Added transition for blur/scale
+                  onError={handleImageError}
                 />
               );
             })}
@@ -162,31 +164,30 @@ const PortfolioPage = () => {
           {/* Horizontal navigation buttons */}
           <button
             onClick={prevImage}
-            className="absolute left-4 top-1/2 -translate-y-1/2 bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-75 transition-all duration-300 focus:outline-none z-10"
+            className="absolute left-4 top-1/2 -translate-y-1/2  bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-75 transition-all duration-300 focus:outline-none z-10"
             aria-label="Previous image"
           >
-            <ChevronLeft size={24} /> {/* Left arrow */}
+            <ChevronLeft size={24} />
           </button>
           <button
             onClick={nextImage}
-            className="absolute right-4 top-1/2 -translate-y-1/2 bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-75 transition-all duration-300 focus:outline-none z-10"
+            className="absolute right-4 top-1/2 -translate-y-1/2  bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-75 transition-all duration-300 focus:outline-none z-10"
             aria-label="Next image"
           >
-            <ChevronRight size={24} /> {/* Right arrow */}
+            <ChevronRight size={24} />
           </button>
-          {/* Horizontal pagination dots (now based on original images length) */}
+          {/* Horizontal pagination dots */}
           <div className="absolute bottom-4 left-0 right-0 flex justify-center space-x-2 z-10">
             {originalImages.map((_, index) => (
               <button
                 key={index}
-                onClick={() => setCurrentSlideIndex(numClones + index)} // Click leads to the real image index
+                onClick={() => setCurrentSlideIndex(numClones + index)}
                 className={`w-3 h-3 rounded-full ${index === (currentSlideIndex - numClones + originalImages.length) % originalImages.length ? 'bg-white' : 'bg-gray-400'} transition-colors duration-300`}
                 aria-label={`Go to image ${index + 1}`}
               ></button>
             ))}
           </div>
         </div>
-
       </div>
     </section>
   );
