@@ -171,21 +171,21 @@ const TestimonialsPage = ({ id, db, appId }) => { // Receiving db and appId prop
           {/* Navigation Arrows */}
           <button
             onClick={prevSlide}
-            className="absolute left-4 top-1/2 -translate-y-1/2 bg-purple-500 bg-opacity-70 text-white p-2 rounded-full hover:bg-opacity-100 transition-all duration-300 focus:outline-none z-10 shadow-md"
+            className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20  bg-opacity-70 text-gray-500 p-2 rounded-full hover:bg-opacity-100 transition-all duration-300 focus:outline-none z-10 shadow-md"
             aria-label="Previous testimonial"
           >
-            <ChevronLeft size={24} />
+            <ChevronLeft size={20} />
           </button>
           <button
             onClick={nextSlide}
-            className="absolute right-4 top-1/2 -translate-y-1/2 bg-purple-500 bg-opacity-70 text-white p-2 rounded-full hover:bg-opacity-100 transition-all duration-300 focus:outline-none z-10 shadow-md"
+            className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20  bg-opacity-70 text-gray-500 p-2 rounded-full hover:bg-opacity-100 transition-all duration-300 focus:outline-none z-10 shadow-md"
             aria-label="Next testimonial"
           >
-            <ChevronRight size={24} />
+            <ChevronRight size={20} />
           </button>
 
           {/* Pagination Dots */}
-          <div className="absolute bottom-4 left-0 right-0 flex justify-center space-x-2 z-10">
+          {/* <div className="absolute bottom-4 left-0 right-0 flex justify-center space-x-2 z-10">
             {testimonials.map((_, index) => (
               <button
                 key={index}
@@ -196,7 +196,7 @@ const TestimonialsPage = ({ id, db, appId }) => { // Receiving db and appId prop
                 aria-label={`Go to testimonial ${index + 1}`}
               ></button>
             ))}
-          </div>
+          </div> */}
         </div>
       ) : (
         <p className="text-center text-gray-600 text-lg mt-8">No testimonials yet. Be the first to leave a review!</p>
