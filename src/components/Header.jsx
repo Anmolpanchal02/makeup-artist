@@ -81,7 +81,7 @@ const Header = ({ currentPage = 'portfolio', navigate = () => {} }) => { // Defa
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2 rounded-lg text-gray-700 hover:text-pink-600 hover:bg-pink-50 transition-all duration-300"
+            className="lg:hidden p-2 rounded-lg text-gray-700 hover:text-pink-600 hover:bg-pink-50 transition-all  duration-300"
             onClick={toggleMenu}
             aria-label="Toggle navigation menu"
           >
