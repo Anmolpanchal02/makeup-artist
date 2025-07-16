@@ -15,7 +15,7 @@ const NavItem = ({ icon, label, page, currentPage, onClick }) => {
       }`}
     >
       <span className={`transition-transform duration-300 ${isActive ? 'scale-110' : 'group-hover:scale-110'}`}>
-        {icon}
+        {icon}``
       </span>
       <span className="font-medium">{label}</span>
     </button>
