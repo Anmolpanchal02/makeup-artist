@@ -7,29 +7,56 @@ import PortfolioPage from './pages/PortfolioPage';
 import TestimonialsPage from './pages/TestimonialsPage';
 import VideoGalleryPage from './pages/VideoGalleryPage';
 import MixedGalleryPage from './pages/MixedGalleryPage';
-// import { MessageCircle } from 'lucide-react'; // अब इसकी ज़रूरत नहीं है
 
-import { FaWhatsapp } from 'react-icons/fa'; // FaWhatsapp आइकॉन इम्पोर्ट करें Font Awesome से
+import { FaWhatsapp } from 'react-icons/fa'; 
+
+import { initializeApp } from 'firebase/app';
+import { getFirestore } from 'firebase/firestore';
+
+// आपके द्वारा प्रदान किया गया Firebase कॉन्फ़िगरेशन
+const FIREBASE_CONFIG = {
+  apiKey: "AIzaSyDjwiefDRWMDdlbChYBoIyDcMBPxvtFLAg",
+  authDomain: "makeup-16bbd.firebaseapp.com",
+  projectId: "makeup-16bbd",
+  storageBucket: "makeup-16bbd.firebasestorage.app",
+  messagingSenderId: "294600421961",
+  appId: "1:294600421961:web:2c9850b86aa03b1d9ec598",
+  measurementId: "G-0HF5FC8ZPC"
+};
 
 const App = () => {
   const [currentPage, setCurrentPage] = useState('portfolio'); 
+  const whatsappNumber = "919876543210"; // IMPORTANT: Change this to your actual number
 
-  // आपका WhatsApp नंबर यहाँ डालें (कंट्री कोड के साथ)
-  const whatsappNumber = "918209282607"; // IMPORTANT: इसे अपने असली नंबर से बदलें
+  const [db, setDb] = useState(null);
+
+  // Firebase Initialization
+  useEffect(() => {
+    console.log("Attempting Firebase initialization with provided config...");
+    try {
+      const app = initializeApp(FIREBASE_CONFIG);
+      const firestoreDb = getFirestore(app);
+      setDb(firestoreDb);
+      console.log("Firebase Firestore initialized successfully with provided config.");
+
+    } catch (error) {
+      console.error("Error during Firebase initialization:", error);
+    }
+  }, []); // Run only once on component mount
 
   const handleNavigate = (pageId) => {
     setCurrentPage(pageId);
     setTimeout(() => {
       const element = document.getElementById(pageId);
       if (element) {
-        const headerOffset = 80;
+        const headerOffset = 80; 
         const elementPosition = element.getBoundingClientRect().top + window.scrollY;
         window.scrollTo({
           top: elementPosition - headerOffset,
           behavior: 'smooth'
         });
       }
-    }, 100);
+    }, 100); 
   };
 
   useEffect(() => {
@@ -78,12 +105,16 @@ const App = () => {
         <VideoGalleryPage id="videogallery" />
         <MixedGalleryPage id="mixedgallery" />
         <ServicesPage id="services" />
-        <TestimonialsPage id="testimonials" />
+        <TestimonialsPage 
+          id="testimonials" 
+          db={db} 
+          // __app_id अब सीधे FIREBASE_CONFIG.projectId से लिया जाएगा
+          appId={FIREBASE_CONFIG.projectId} 
+        /> 
       </main>
 
       <Footer />
 
-      {/* WhatsApp Floating Icon - अब FaWhatsapp का उपयोग करके */}
       <a 
         href={`https://wa.me/${whatsappNumber}`} 
         target="_blank" 
@@ -100,15 +131,12 @@ const App = () => {
                    animate-pulse-slow" 
         aria-label="WhatsApp Chat"
       >
-        {/* CORRECTED LINE: Using FaWhatsapp component */}
         <FaWhatsapp size={32} /> 
-        {/* Optional: Text on hover for desktop */}
         <span className="hidden md:block absolute right-full mr-3 px-3 py-1 bg-gray-800 text-white text-sm rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
           Chat on WhatsApp
         </span>
       </a>
 
-      {/* Tailwind CSS Custom Animation Keyframes (Add this to your CSS or a style block) */}
       <style>
         {`
         @keyframes pulse-slow {
