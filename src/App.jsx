@@ -26,7 +26,7 @@ const FIREBASE_CONFIG = {
 
 const App = () => {
   const [currentPage, setCurrentPage] = useState('portfolio'); 
-  const whatsappNumber = "919876543210"; // IMPORTANT: Change this to your actual number
+  const whatsappNumber = "91 8209282607"; // IMPORTANT: Change this to your actual number
 
   const [db, setDb] = useState(null);
 
