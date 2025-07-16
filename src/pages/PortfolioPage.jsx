@@ -177,7 +177,7 @@ const PortfolioPage = ({ id }) => {
             <ChevronRight size={24} />
           </button>
           {/* Horizontal pagination dots */}
-          <div className="absolute bottom-4 left-0 right-0 flex justify-center space-x-2 z-10">
+          {/* <div className="absolute bottom-4 left-0 right-0 flex justify-center space-x-2 z-10">
             {originalImages.map((_, index) => (
               <button
                 key={index}
@@ -186,7 +186,7 @@ const PortfolioPage = ({ id }) => {
                 aria-label={`Go to image ${index + 1}`}
               ></button>
             ))}
-          </div>
+          </div> */}
         </div>
       </div>
     </section>
