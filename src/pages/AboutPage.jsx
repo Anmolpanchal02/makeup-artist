@@ -38,7 +38,7 @@ const AboutPage = () => {
             </div>
             
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-800 leading-tight">
-              About Sarah
+              About Sunita
             </h2>
 
             <h3 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-pink-600 leading-tight">
